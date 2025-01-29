@@ -10,7 +10,7 @@
 
     <artifactId>jfreechart</artifactId>
     <groupId>org.jfree</groupId>
-    <version>1.5.0</version>
+    <version>1.5.0-abacus</version>
     <packaging>jar</packaging>
 
     <organization>
@@ -53,10 +53,11 @@
     </licenses>
 
     <dependencies>
+        <!-- Jakarta EE API -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -73,24 +74,12 @@
           <id>ossrh</id>
           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-    </distributionManagement>    
-    
+    </distributionManagement>
+
     <build>
         <testSourceDirectory>src/test/java</testSourceDirectory>
 
         <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>${project.source.level}</source>
-                    <target>${project.target.level}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>                
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
